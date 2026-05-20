@@ -1,0 +1,103 @@
+# WhatsApp API Wiki
+
+> Wiki técnica para integradores de WhatsApp Business Platform. Cubre Cloud API oficial, Evolution API (no oficial, basado en Baileys), Respond.io, Kommo CRM, despliegue en Railway y orquestación con n8n + OpenAI. Idioma principal: español. Mantenida por @mentorcx.
+
+Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento usa frontmatter YAML, abre con un TL;DR y sigue una estructura de encabezados predecibles (`## Contexto`, `## Pasos`, `## Errores comunes`, `## Referencias`).
+
+## Fundamentos
+
+- [Qué es WhatsApp Business Platform](00-fundamentos/que-es-wa-business-platform.md): WABA, Cloud API, on-premise (deprecada), BSPs.
+- [Arquitectura y roles](00-fundamentos/arquitectura.md): Portfolio, WABA, Phone Number, App, System User.
+- [Cloud API vs alternativas](00-fundamentos/cloud-api-vs-alternativas.md): comparación de alto nivel.
+
+## Onboarding Meta
+
+- [Crear Business Portfolio](01-onboarding-meta/business-portfolio.md)
+- [Verificación comercial](01-onboarding-meta/verificacion-comercial.md): documentos, tiempos, errores frecuentes.
+- [Embedded Signup vs flujo manual](01-onboarding-meta/embedded-signup.md)
+- [System Users y tokens](01-onboarding-meta/system-users-tokens.md): permanentes vs temporales, scopes.
+
+## Números y conexión
+
+- [Requisitos del número](02-numeros-y-conexion/requisitos-numero.md)
+- [Migrar desde WA Business App](02-numeros-y-conexion/migrar-numero.md)
+- [Display name](02-numeros-y-conexion/display-name.md): políticas, rechazo, apelación.
+- [Configurar webhooks](02-numeros-y-conexion/webhooks.md)
+- [Tiers de mensajería](02-numeros-y-conexion/tiers-mensajeria.md): 250, 1K, 10K, 100K, unlimited.
+
+## Formas de uso
+
+- [Comparativa cruzada](03-formas-de-uso/comparativa.md): tabla de todas las opciones.
+- [Cloud API directa (oficial)](03-formas-de-uso/cloud-api-oficial.md)
+- [Evolution API](03-formas-de-uso/evolution-api.md): no oficial, basado en Baileys, riesgos.
+- [Respond.io](03-formas-de-uso/respond-io.md): SaaS omnicanal.
+- [Kommo CRM](03-formas-de-uso/kommo-crm.md): WA Lite vs Cloud API vs proveedor.
+- [BSP: Twilio](03-formas-de-uso/bsps/twilio.md)
+- [BSP: Gupshup](03-formas-de-uso/bsps/gupshup.md)
+- [CRMs: HubSpot, Salesforce, Zoho](03-formas-de-uso/crms/)
+
+## Mensajería
+
+- [Tipos de mensaje](04-mensajeria/tipos-de-mensaje.md): text, media, location, contacts, reaction.
+- [Mensajes interactivos](04-mensajeria/interactivos.md): buttons, lists, CTA URL.
+- [Flows](04-mensajeria/flows.md): formularios in-chat.
+- [Límites de media](04-mensajeria/limites-media.md)
+
+## Plantillas (HSM)
+
+- [Categorías y pricing](05-plantillas-hsm/categorias.md): Marketing, Utility, Authentication.
+- [Estructura y variables](05-plantillas-hsm/estructura.md)
+- [Buenas prácticas para aprobación](05-plantillas-hsm/aprobacion.md)
+- [Causas de rechazo frecuentes](05-plantillas-hsm/rechazos.md)
+- [Pausing por bajo engagement](05-plantillas-hsm/pausing.md)
+
+## Políticas y calidad
+
+- [Ventana de 24h](06-politicas-y-calidad/ventana-24h.md)
+- [Free entry points](06-politicas-y-calidad/free-entry-points.md): CTWA, Click-to-WhatsApp.
+- [Quality rating](06-politicas-y-calidad/quality-rating.md): green/yellow/red.
+- [Conversation-based pricing](06-politicas-y-calidad/pricing.md)
+- [Opt-in obligatorio](06-politicas-y-calidad/opt-in.md)
+
+## Integraciones
+
+- [n8n: nodo oficial + patrones](07-integraciones/n8n/)
+- [OpenAI: function calling, contexto, costos](07-integraciones/openai/)
+- [Evolution API: endpoints y eventos](07-integraciones/evolution-api/)
+- [Respond.io: workflows y webhooks](07-integraciones/respond-io/)
+- [Kommo: Salesbot, API, webhooks](07-integraciones/kommo/)
+
+## Despliegue
+
+- [Railway: conceptos](08-despliegue/railway/conceptos.md)
+- [Plantilla: Evolution API + Postgres + Redis](08-despliegue/railway/plantilla-evolution-api.md)
+- [Plantilla: n8n + Postgres + Redis](08-despliegue/railway/plantilla-n8n.md)
+- [Plantilla: Stack completo Evolution + n8n + OpenAI](08-despliegue/railway/plantilla-evolution-n8n-openai.md)
+- [docker-compose equivalentes](08-despliegue/docker-compose/)
+- [Alternativas](08-despliegue/alternativas.md): Fly.io, Render, Hetzner.
+
+## Recetas end-to-end
+
+- [Bot de atención con handoff humano](09-recetas/bot-atencion-handoff.md)
+- [Agente de ventas con catálogo](09-recetas/agente-ventas-catalogo.md)
+- [Recordatorios de turnos con confirmación](09-recetas/recordatorios-turnos.md)
+- [Encuestas NPS post-venta](09-recetas/nps-post-venta.md)
+- [RAG sobre base de conocimiento](09-recetas/rag-kb.md)
+- [Kommo + Cloud API + OpenAI con handoff](09-recetas/kommo-cloudapi-openai-handoff.md)
+- [Kommo + n8n + RAG](09-recetas/kommo-n8n-rag.md)
+
+## Troubleshooting
+
+- [Códigos de error de la API](10-troubleshooting/codigos-error.md)
+- [Webhooks que no llegan](10-troubleshooting/webhooks-no-llegan.md)
+- [Plantillas pausadas](10-troubleshooting/plantillas-pausadas.md)
+- [Tokens y permisos](10-troubleshooting/tokens.md)
+- [Rate limits](10-troubleshooting/rate-limits.md)
+
+## Meta
+
+- [Convenciones de escritura](_meta/conventions.md)
+- [Fuentes oficiales](_meta/sources.md)
+- [Prompts sugeridos para consulta](_meta/prompt-templates.md)
+- [Glosario JSON](glossary.json)
+- [Changelog](CHANGELOG.md)

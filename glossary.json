@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "version": "0.1.0",
+  "updated": "2026-05-20",
+  "terms": {
+    "WABA": {
+      "full": "WhatsApp Business Account",
+      "alias": ["cuenta de WhatsApp Business"],
+      "definition": "Entidad lógica en Meta que agrupa uno o más números de WhatsApp Business y sus plantillas. Vive dentro de un Business Portfolio.",
+      "see_also": ["BusinessPortfolio", "PhoneNumberId"]
+    },
+    "BusinessPortfolio": {
+      "full": "Business Portfolio",
+      "alias": ["Business Manager", "BM"],
+      "definition": "Contenedor de alto nivel en Meta donde viven los activos comerciales: páginas, apps, cuentas publicitarias y WABAs.",
+      "see_also": ["WABA"]
+    },
+    "PhoneNumberId": {
+      "full": "Phone Number ID",
+      "alias": [],
+      "definition": "Identificador único de un número conectado a una WABA. Se usa en los endpoints de la Cloud API (/{{PHONE_NUMBER_ID}}/messages).",
+      "see_also": ["WABA"]
+    },
+    "HSM": {
+      "full": "Highly Structured Message",
+      "alias": ["plantilla", "template", "message template"],
+      "definition": "Mensaje pre-aprobado por Meta usado para iniciar conversaciones fuera de la ventana de 24h o enviar contenido transaccional.",
+      "see_also": ["VentanaDe24h", "Categoria"]
+    },
+    "Categoria": {
+      "full": "Categoría de plantilla",
+      "alias": [],
+      "definition": "Clasificación de una HSM: Marketing, Utility o Authentication. Determina el pricing y las reglas de aprobación.",
+      "see_also": ["HSM"]
+    },
+    "VentanaDe24h": {
+      "full": "Ventana de servicio al cliente de 24 horas",
+      "alias": ["customer service window", "24h window"],
+      "definition": "Período de 24 horas desde el último mensaje del usuario durante el cual el negocio puede enviar mensajes free-form sin plantilla.",
+      "see_also": ["HSM", "FreeEntryPoint"]
+    },
+    "FreeEntryPoint": {
+      "full": "Free Entry Point Conversation",
+      "alias": ["CTWA conversation"],
+      "definition": "Conversación iniciada desde un anuncio Click-to-WhatsApp o botón de Facebook Page, que abre una ventana de 72h sin costo de plantilla.",
+      "see_also": ["CTWA"]
+    },
+    "CTWA": {
+      "full": "Click-to-WhatsApp Ads",
+      "alias": [],
+      "definition": "Formato de anuncio en Facebook/Instagram que al hacer click abre una conversación de WhatsApp con el negocio.",
+      "see_also": ["FreeEntryPoint"]
+    },
+    "BSP": {
+      "full": "Business Solution Provider",
+      "alias": [],
+      "definition": "Proveedor autorizado por Meta para revender acceso a la WhatsApp Business Platform, típicamente con servicios añadidos.",
+      "see_also": ["CloudAPI"]
+    },
+    "CloudAPI": {
+      "full": "WhatsApp Cloud API",
+      "alias": ["API oficial", "Cloud API"],
+      "definition": "API REST hosteada por Meta para enviar y recibir mensajes de WhatsApp Business. Reemplaza a la deprecada On-Premise API.",
+      "see_also": ["WABA", "BSP"]
+    },
+    "EvolutionAPI": {
+      "full": "Evolution API",
+      "alias": [],
+      "definition": "API REST no oficial basada en Baileys que se conecta a WhatsApp como si fuera un cliente web. No es Cloud API y conlleva riesgo de ban.",
+      "see_also": ["Baileys", "CloudAPI"]
+    },
+    "Baileys": {
+      "full": "Baileys",
+      "alias": [],
+      "definition": "Librería TypeScript open source que implementa el protocolo WebSocket de WhatsApp Web. Base de Evolution API y otras soluciones no oficiales.",
+      "see_also": ["EvolutionAPI"]
+    },
+    "RespondIo": {
+      "full": "Respond.io",
+      "alias": [],
+      "definition": "Plataforma SaaS omnicanal partner oficial de Meta con foco en mensajería conversacional para ventas y soporte.",
+      "see_also": []
+    },
+    "Kommo": {
+      "full": "Kommo CRM",
+      "alias": ["amoCRM (legacy)"],
+      "definition": "CRM con foco en mensajería que ofrece integración con WhatsApp vía Cloud API, WA Lite o proveedores externos.",
+      "see_also": ["Salesbot"]
+    },
+    "Salesbot": {
+      "full": "Salesbot",
+      "alias": [],
+      "definition": "Motor de bots nativo de Kommo, basado en bloques visuales, que permite automatizar respuestas y flujos de cualificación.",
+      "see_also": ["Kommo"]
+    },
+    "QualityRating": {
+      "full": "Quality Rating",
+      "alias": [],
+      "definition": "Métrica de calidad de un número (green, yellow, red) calculada a partir del feedback de usuarios y bloqueos. Afecta los tiers de mensajería.",
+      "see_also": ["MessagingTier"]
+    },
+    "MessagingTier": {
+      "full": "Messaging Tier",
+      "alias": ["tier de mensajería"],
+      "definition": "Límite diario de conversaciones business-initiated nuevas para un número: 250, 1K, 10K, 100K, ilimitado.",
+      "see_also": ["QualityRating"]
+    },
+    "SystemUser": {
+      "full": "System User",
+      "alias": [],
+      "definition": "Usuario no humano de Business Portfolio que genera tokens permanentes para integraciones de servidor.",
+      "see_also": ["AccessToken"]
+    },
+    "AccessToken": {
+      "full": "Access Token",
+      "alias": [],
+      "definition": "Token Bearer que autentica las llamadas a la Graph API. Puede ser temporal (user token) o permanente (system user token).",
+      "see_also": ["SystemUser"]
+    },
+    "EmbeddedSignup": {
+      "full": "Embedded Signup",
+      "alias": [],
+      "definition": "Flujo de onboarding embebido provisto por Meta para que un BSP o ISV conecte la WABA del cliente sin que éste salga de la aplicación del integrador.",
+      "see_also": ["WABA", "SystemUser"]
+    },
+    "Webhook": {
+      "full": "Webhook",
+      "alias": [],
+      "definition": "Endpoint HTTP del integrador al que Meta envía eventos (mensajes entrantes, cambios de estado, alertas de calidad).",
+      "see_also": []
+    },
+    "OptIn": {
+      "full": "Opt-in",
+      "alias": ["consentimiento"],
+      "definition": "Consentimiento explícito del usuario para recibir mensajes del negocio en WhatsApp. Obligatorio según políticas de Meta.",
+      "see_also": []
+    }
+  }
+}

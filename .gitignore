@@ -1,0 +1,18 @@
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Build artifacts si se agrega MkDocs/Docusaurus después
+site/
+build/
+node_modules/
+.docusaurus/
+
+# Generados
+llms-full.txt
+
+# Secretos locales
+.env
+.env.local
+*.secret
