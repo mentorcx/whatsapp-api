@@ -5,6 +5,15 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 ## [Unreleased]
 
 ### Added
+- `03-formas-de-uso/cloud-api-oficial.md` — API directa, endpoints, ventajas/desventajas, checklist de producción.
+- `03-formas-de-uso/respond-io.md` — SaaS omnicanal, comparación con Kommo/n8n, AI Agent, patrón híbrido.
+- `09-recetas/recordatorios-turnos.md` — receta con plantilla Utility, botones, Cron, manejo de no-shows.
+- `09-recetas/nps-post-venta.md` — receta de encuesta NPS con ramas por categoría y reporting.
+- `07-integraciones/openai/contexto-conversacion.md` — ventana deslizante, summarization, facts, tokens.
+- `07-integraciones/n8n/contexto.md` — Postgres vs Redis, schema, upserts, dedup, multi-tenant.
+- `10-troubleshooting/rate-limits.md` — throughput, tier, pair limit, backoff, diseño de envíos masivos.
+- `10-troubleshooting/evolution-desconexion.md` — árbol de diagnóstico, ban vs resoluble, reconexión.
+- `01-onboarding-meta/embedded-signup.md` — flujo multi-cliente, OAuth, App Review, manejo de revocación.
 - `02-numeros-y-conexion/requisitos-numero.md` — móvil/fijo, estados previos, países, test number, multi-número.
 - `02-numeros-y-conexion/display-name.md` — Name Policy, ejemplos, proceso de aprobación, badge verde.
 - `10-troubleshooting/webhooks-no-llegan.md` — checklist completo de diagnóstico + script de verificación.
