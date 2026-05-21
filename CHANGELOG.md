@@ -5,6 +5,22 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 ## [Unreleased]
 
 ### Added
+- `09-recetas/rag-kb.md` — receta RAG: ingesta, embeddings, pgvector, runtime, anti-alucinación.
+- `09-recetas/kommo-n8n-rag.md` — RAG sobre Kommo con Salesbot delegando a n8n.
+- `09-recetas/agente-ventas-catalogo.md` — agente de ventas con catálogo, tools, carrito, checkout.
+- `08-despliegue/railway/conceptos.md` — proyectos, servicios, red interna, variables, volúmenes, costos.
+- `08-despliegue/railway/plantilla-n8n.md` — n8n queue mode + worker + Postgres + Redis.
+- `08-despliegue/alternativas.md` — Fly.io, Render, Hetzner, Coolify, matriz de decisión.
+- `08-despliegue/docker-compose/README.md` — stack self-hosted completo con compose + Caddy.
+- `06-politicas-y-calidad/prohibiciones.md` — Commerce/Business Policy, rubros prohibidos y restringidos.
+- `00-fundamentos/cloud-api-vs-alternativas.md` — decisión oficial vs no oficial, árbol de decisión.
+- `00-fundamentos/roles.md` — los 6 roles, propiedad de activos, anti-patrón de lock-in.
+- `02-numeros-y-conexion/migrar-numero.md` — migración desde app, On-Premise, entre WABAs, BSPs.
+- `02-numeros-y-conexion/multi-numero.md` — qué se comparte, routing, patrones marketing/soporte/multi-país.
+- `07-integraciones/openai/costos.md` — estimación de tokens, comparación con Meta, optimizaciones.
+- `07-integraciones/openai/prompts.md` — anatomía del system prompt, formato WhatsApp, anti-alucinación.
+
+### Earlier in Unreleased
 - `03-formas-de-uso/cloud-api-oficial.md` — API directa, endpoints, ventajas/desventajas, checklist de producción.
 - `03-formas-de-uso/respond-io.md` — SaaS omnicanal, comparación con Kommo/n8n, AI Agent, patrón híbrido.
 - `09-recetas/recordatorios-turnos.md` — receta con plantilla Utility, botones, Cron, manejo de no-shows.
