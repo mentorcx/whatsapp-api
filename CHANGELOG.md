@@ -5,6 +5,17 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 ## [Unreleased]
 
 ### Added
+- `02-numeros-y-conexion/requisitos-numero.md` — móvil/fijo, estados previos, países, test number, multi-número.
+- `02-numeros-y-conexion/display-name.md` — Name Policy, ejemplos, proceso de aprobación, badge verde.
+- `10-troubleshooting/webhooks-no-llegan.md` — checklist completo de diagnóstico + script de verificación.
+- `10-troubleshooting/tokens.md` — debug_token, tipos, scopes, casos comunes y comandos.
+- `10-troubleshooting/plantillas-pausadas.md` — diagnóstico, fallback automático, patrón intent.
+- `05-plantillas-hsm/estructura.md` — header/body/footer/buttons, variables, samples, ejemplos.
+- `05-plantillas-hsm/pausing.md` — quality score, prevención, rotación, auditoría.
+- `07-integraciones/n8n/patrones.md` — router, dedup, sesión, rate limiting, handoff async, subflows.
+- `07-integraciones/openai/function-calling.md` — tools, schema, flow completo, strict mode, costos.
+- `04-mensajeria/limites-media.md` — tabla por tipo, formatos, validación, optimización.
+- `04-mensajeria/flows.md` — JSON, screens, components, envío, webhook nfm_reply, endpoint dinámico.
 - `01-onboarding-meta/business-portfolio.md` — crear Portfolio, asignar activos, dueño correcto.
 - `01-onboarding-meta/verificacion-comercial.md` — documentos, tiempos, rechazos frecuentes, verificación facial.
 - `01-onboarding-meta/system-users-tokens.md` — tipos de token, scopes, manejo seguro, rotación.
