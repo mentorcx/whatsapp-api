@@ -5,6 +5,8 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 ## [Unreleased]
 
 ### Added
+- `07-integraciones/kommo/` — sección completa: conceptos, conexión WhatsApp, Salesbot, API REST, webhooks, integración con n8n, integración con OpenAI, limitaciones.
+- `07-integraciones/evolution-api/` — instancias, endpoints, eventos webhook, integraciones (n8n, Chatwoot, Typebot).
 - `09-recetas/rag-kb.md` — receta RAG: ingesta, embeddings, pgvector, runtime, anti-alucinación.
 - `09-recetas/kommo-n8n-rag.md` — RAG sobre Kommo con Salesbot delegando a n8n.
 - `09-recetas/agente-ventas-catalogo.md` — agente de ventas con catálogo, tools, carrito, checkout.
