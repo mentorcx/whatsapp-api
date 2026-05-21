@@ -5,6 +5,16 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 ## [Unreleased]
 
 ### Added
+- `01-onboarding-meta/business-portfolio.md` — crear Portfolio, asignar activos, dueño correcto.
+- `01-onboarding-meta/verificacion-comercial.md` — documentos, tiempos, rechazos frecuentes, verificación facial.
+- `01-onboarding-meta/system-users-tokens.md` — tipos de token, scopes, manejo seguro, rotación.
+- `06-politicas-y-calidad/pricing.md` — conversation-based pricing, categorías, lectura en webhooks, optimizaciones.
+- `06-politicas-y-calidad/opt-in.md` — qué exige Meta, formas válidas, schema de evidencia, jurisdicciones.
+- `06-politicas-y-calidad/free-entry-points.md` — CTWA, ventana 72h, referral en webhook, patrón recomendado.
+- `04-mensajeria/tipos-de-mensaje.md` — text, media, location, contacts, reaction, reply, upload/download de media.
+- `04-mensajeria/interactivos.md` — buttons, list, CTA URL, parsing en webhook, patrones de menú.
+- `07-integraciones/n8n/webhook-entrante.md` — implementación completa de referencia con verify, HMAC, dedup y parseo.
+- `08-despliegue/railway/plantilla-evolution-api.md` — plantilla standalone (sin n8n) para integrar con sistemas existentes.
 - `00-fundamentos/que-es-wa-business-platform.md` — diferencia entre WA Business app y Business Platform, Cloud API vs On-Premise.
 - `00-fundamentos/arquitectura.md` — jerarquía Portfolio → WABA → Phone Number → App → Token, roles humanos, patrones de despliegue.
 - `02-numeros-y-conexion/webhooks.md` — setup, verificación GET, validación de firma, retries, dedup, payload examples.
