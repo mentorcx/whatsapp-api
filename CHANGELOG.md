@@ -5,6 +5,13 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 ## [Unreleased]
 
 ### Added
+- `00-fundamentos/que-es-wa-business-platform.md` — diferencia entre WA Business app y Business Platform, Cloud API vs On-Premise.
+- `00-fundamentos/arquitectura.md` — jerarquía Portfolio → WABA → Phone Number → App → Token, roles humanos, patrones de despliegue.
+- `02-numeros-y-conexion/webhooks.md` — setup, verificación GET, validación de firma, retries, dedup, payload examples.
+- `02-numeros-y-conexion/tiers-mensajeria.md` — tabla de tiers, escalado, warming, multi-número.
+- `05-plantillas-hsm/categorias.md` — Marketing/Utility/Authentication, árbol de decisión, pricing, vida de una plantilla.
+- `10-troubleshooting/codigos-error.md` — tabla maestra (autenticación, rate limits, mensajes 131x, plantillas 132x, media).
+- `09-recetas/kommo-cloudapi-openai-handoff.md` — receta completa con Salesbot delegando a n8n, function calling, pipeline.
 - `03-formas-de-uso/evolution-api.md` — análisis completo de Evolution API: cuándo usarla, riesgos, endpoints, eventos, buenas prácticas.
 - `03-formas-de-uso/kommo-crm.md` — modelos de conexión a WA (Lite, Cloud, proveedor), Salesbot vs n8n, patrón híbrido.
 - `05-plantillas-hsm/aprobacion.md` — checklist y buenas prácticas para aprobación.
