@@ -5,6 +5,15 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 ## [Unreleased]
 
 ### Added
+- BSPs: `03-formas-de-uso/bsps/twilio.md`, `gupshup.md`.
+- CRMs: `03-formas-de-uso/crms/hubspot.md`, `salesforce.md`, `zoho.md`.
+- n8n subdocs: `setup.md`, `nodo-whatsapp-cloud.md`, `subflows.md`, `errores-comunes.md`.
+- OpenAI subdocs: `streaming.md`, `moderacion.md`.
+- Respond.io subdocs: `setup.md`, `channels.md`, `workflows.md`, `webhooks.md`, `api-rest.md`, `vs-n8n.md`.
+- Mensajería: `marcar-leido-typing.md`, `reply-react.md`.
+- Plantillas HSM: `versionado.md`, `idiomas.md`.
+- Onboarding: `2fa.md` — PIN del número + 2FA de cuenta Meta.
+- Despliegue: `08-despliegue/railway/plantilla-cloudapi-n8n-openai.md` — stack productivo con Cloud API oficial.
 - `07-integraciones/kommo/` — sección completa: conceptos, conexión WhatsApp, Salesbot, API REST, webhooks, integración con n8n, integración con OpenAI, limitaciones.
 - `07-integraciones/evolution-api/` — instancias, endpoints, eventos webhook, integraciones (n8n, Chatwoot, Typebot).
 - `09-recetas/rag-kb.md` — receta RAG: ingesta, embeddings, pgvector, runtime, anti-alucinación.
