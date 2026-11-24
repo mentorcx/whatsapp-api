@@ -41,9 +41,9 @@ Respond.io ocupa el mismo nicho que Kommo: SaaS sobre WhatsApp con UI de agentes
 | Suscripción | Plan mensual / anual por niveles |
 | MAU (Monthly Active Contacts) | Se cobra por contacto único con el que hubo conversación en el mes |
 | Usuarios / agentes | Según plan, con add-ons |
-| Conversaciones de Meta | Aparte: el pricing de WhatsApp lo cobra Meta directamente |
+| Mensajes de Meta | Aparte: el pricing de WhatsApp lo cobra Meta directamente |
 
-Importante para presupuestar: el costo total = **suscripción Respond.io + MAU + conversaciones de Meta**.
+Importante para presupuestar: el costo total = **suscripción Respond.io + MAU + mensajes de plantilla de Meta**.
 
 ## Cuándo elegir Respond.io
 

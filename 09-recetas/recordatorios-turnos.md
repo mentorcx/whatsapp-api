@@ -224,7 +224,7 @@ Cuidado: no abusar de recordatorios (máximo 2). Spam = quality drop.
 
 | Concepto | Estimación |
 |---|---|
-| Conversación Utility por recordatorio | Según país; en AR ~$0.02-0.04 |
+| Plantilla Utility por recordatorio (fuera de ventana) | Según país; en AR ~$0.02-0.04. Las respuestas del bot a la confirmación son free-form: $0 |
 | 1.000 recordatorios/mes | ~$20-40 |
 | Hosting (n8n + Postgres) | ~$15-25/mes |
 

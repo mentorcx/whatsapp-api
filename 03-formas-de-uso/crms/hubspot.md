@@ -87,7 +87,7 @@ curl -X GET \
 | Professional | Sí (con add-on a veces) | Medio-alto |
 | Enterprise | Sí | Alto |
 
-Más: conversaciones de Meta (no incluidas en la suscripción HubSpot).
+Más: mensajes de plantilla de Meta (no incluidos en la suscripción HubSpot).
 
 ## Errores comunes
 

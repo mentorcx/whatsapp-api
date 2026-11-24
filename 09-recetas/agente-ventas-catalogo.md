@@ -347,7 +347,7 @@ El stock debe estar razonablemente fresco para no vender lo que no hay.
 |---|---|
 | OpenAI por conversación de venta (~15 turnos, con tools) | ~$0.005-0.02 |
 | Imágenes de producto | Subir vía `media_id` y reusar |
-| Conversaciones de WA | Mayormente service (el usuario inicia) |
+| Mensajes de WA (Meta) | Mayormente free-form en ventana de servicio (el usuario inicia): $0 |
 | Hosting | ~$20-30/mes |
 
 ## Errores comunes

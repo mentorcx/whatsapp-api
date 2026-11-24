@@ -33,9 +33,9 @@ La ventana de 24h es el mecanismo central de Meta para diferenciar conversacione
 
 | Estado | ¿Quién inició? | ¿Cómo enviar? | Costo |
 |---|---|---|---|
-| Ventana abierta (reactiva) | Usuario | Free-form, sin HSM | Conversación de servicio (puede ser free según pricing actual) |
+| Ventana abierta (reactiva) | Usuario | Free-form, sin HSM | Free-form gratis; plantillas Utility también gratis dentro de la ventana |
 | Ventana cerrada | — | Solo HSM aprobada | Conversación business-initiated (paga según categoría) |
-| Free Entry Point activo | Usuario vía CTWA / botón FB | Free-form 72h | Sin costo de plantilla |
+| Free Entry Point activo | Usuario vía CTWA / botón FB | Free-form 72h | Todos los mensajes gratis (si el negocio respondió en < 24h) |
 
 Ver [`free-entry-points.md`](./free-entry-points.md) para el caso CTWA.
 
@@ -130,7 +130,7 @@ Si el usuario responde a esa plantilla, se abre la ventana de 24h y a partir de 
 |---|---|---|
 | Error 131047 / "Re-engagement message" | Intentaste enviar free-form con ventana cerrada | Cambiar a plantilla aprobada |
 | Plantilla rechazada por la API en envío (no en aprobación) | Variables mal pasadas o plantilla pausada | Ver [`10-troubleshooting/plantillas-pausadas.md`](../10-troubleshooting/plantillas-pausadas.md) |
-| Doble costo de conversación inesperado | Enviaste plantilla con ventana ya abierta + nuevo flujo cross-categoría | Revisar lógica de tracking de ventana |
+| Plantillas cobradas que podían ser gratis | Enviaste plantilla con ventana ya abierta en vez de free-form, o una Utility justo después de vencida la ventana | Revisar lógica de tracking de ventana; con ventana abierta usar free-form |
 | Usuario reportó que "le llegó publicidad sin permiso" | Plantilla Marketing enviada sin opt-in | Revisar [`opt-in.md`](./opt-in.md) |
 
 ## Referencias

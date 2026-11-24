@@ -228,7 +228,7 @@ WHERE responded_at >= date_trunc('month', current_date);
 
 | Concepto | Estimación |
 |---|---|
-| 1 conversación Utility por encuesta | ~$0.02-0.04 (AR) |
+| 1 plantilla Utility por encuesta (fuera de ventana) | ~$0.02-0.04 (AR); $0 si el cliente escribió en las últimas 24h |
 | 1.000 encuestas/mes | ~$20-40 |
 | Hosting | ~$15-25/mes |
 

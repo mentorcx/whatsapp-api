@@ -215,17 +215,16 @@ El mismo evento `messages` trae `value.statuses[]` para mensajes que vos enviast
   "recipient_id": "5491133334444",
   "status": "delivered",
   "timestamp": "1716200005",
-  "conversation": {
-    "id": "abc...",
-    "origin": { "type": "service" }
-  },
   "pricing": {
     "billable": true,
-    "pricing_model": "CBP",
-    "category": "service"
+    "pricing_model": "PMP",
+    "type": "regular",
+    "category": "utility"
   }
 }]
 ```
+
+El objeto `pricing` indica si ese mensaje se cobra (`billable`) y por qué categoría. `type` puede ser `regular`, `free_customer_service` o `free_entry_point`. Detalle en [`06-politicas-y-calidad/pricing.md`](../06-politicas-y-calidad/pricing.md).
 
 | `status` | Significado |
 |---|---|

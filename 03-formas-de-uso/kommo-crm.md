@@ -112,7 +112,7 @@ OpenAI                              ← Cerebro
 Kommo API REST                      ← n8n actualiza lead, cambia stage, asigna agente
 ```
 
-Este patrón aparece en las recetas [`09-recetas/kommo-cloudapi-openai-handoff.md`](../09-recetas/kommo-cloudapi-openai-handoff.md) y [`09-recetas/kommo-n8n-rag.md`](../09-recetas/kommo-n8n-rag.md) (pendientes).
+Este patrón aparece en las recetas [`09-recetas/kommo-cloudapi-openai-handoff.md`](../09-recetas/kommo-cloudapi-openai-handoff.md) y [`09-recetas/kommo-n8n-rag.md`](../09-recetas/kommo-n8n-rag.md).
 
 ## Autenticación de la API REST
 
@@ -129,7 +129,7 @@ Long-lived token se genera desde **Settings → Integrations → Crear integraci
 Authorization: Bearer {{LONG_LIVED_TOKEN}}
 ```
 
-Detalle en [`07-integraciones/kommo/api-rest.md`](../07-integraciones/kommo/api-rest.md) (pendiente).
+Detalle en [`07-integraciones/kommo/api-rest.md`](../07-integraciones/kommo/api-rest.md).
 
 ## Webhooks de Kommo
 

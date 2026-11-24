@@ -121,7 +121,7 @@ Tamaños máximos resumidos:
 | Video | 16 MB |
 | Sticker | 100 KB (estático) / 500 KB (animado) |
 
-Detalle en [`04-mensajeria/limites-media.md`](../04-mensajeria/limites-media.md) (pendiente).
+Detalle en [`04-mensajeria/limites-media.md`](../04-mensajeria/limites-media.md).
 
 ### Webhooks
 

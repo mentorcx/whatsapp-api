@@ -253,7 +253,7 @@ Ver criterios de aprobación en [`05-plantillas-hsm/aprobacion.md`](../05-planti
 | Concepto | Estimación |
 |---|---|
 | OpenAI (gpt-4o-mini, ~10 turnos/conv) | ~0.005 USD por conversación |
-| WA Cloud API (conversación service) | 0 USD (dentro de cuota free) o tarifa local |
+| WA Cloud API (respuestas free-form dentro de la ventana de 24h) | 0 USD |
 | Hosting (Railway stack) | ~25 USD/mes total |
 
 A 200 conversaciones/día: ~30 USD/mes en OpenAI + hosting.

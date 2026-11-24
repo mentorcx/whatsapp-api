@@ -13,7 +13,7 @@ audience: [integrador, comercial, dev]
 
 # Respond.io: setup
 
-> **TL;DR:** Crear workspace en Respond.io, conectar WhatsApp Cloud API vía el flujo embebido (partner oficial), invitar agentes, crear plantillas, configurar workflows. Operativo en horas. Los costos: suscripción + MAU (Monthly Active Contacts) + conversaciones de Meta.
+> **TL;DR:** Crear workspace en Respond.io, conectar WhatsApp Cloud API vía el flujo embebido (partner oficial), invitar agentes, crear plantillas, configurar workflows. Operativo en horas. Los costos: suscripción + MAU (Monthly Active Contacts) + mensajes de plantilla de Meta.
 
 ## Pasos de alta
 
@@ -108,7 +108,7 @@ Agrupar agentes por equipo (Ventas, Soporte). Routing de workflows asigna a equi
 |---|---|
 | Suscripción mensual | Por tier |
 | MAU | Cada contacto único con actividad en el mes |
-| Conversaciones de Meta | Aparte, paga el dueño de la WABA |
+| Mensajes de plantilla de Meta | Aparte, paga el dueño de la WABA |
 | Add-ons (AI, integraciones) | Según plan |
 
 Calcular antes de prometer al cliente: el MAU sube rápido con bases grandes.

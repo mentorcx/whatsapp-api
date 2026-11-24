@@ -42,7 +42,7 @@
     "FreeEntryPoint": {
       "full": "Free Entry Point Conversation",
       "alias": ["CTWA conversation"],
-      "definition": "Conversación iniciada desde un anuncio Click-to-WhatsApp o botón de Facebook Page, que abre una ventana de 72h sin costo de plantilla.",
+      "definition": "Conversación iniciada desde un anuncio Click-to-WhatsApp o botón de Facebook Page, que, si el negocio responde dentro de 24h, abre una ventana de 72h donde todos los mensajes (incluidas plantillas) son gratis.",
       "see_also": ["CTWA"]
     },
     "CTWA": {

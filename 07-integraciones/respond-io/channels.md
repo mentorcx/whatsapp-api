@@ -82,7 +82,7 @@ Patrón: si un usuario escribió por WA y vos querés mandarle un email después
 | Messenger | Ventana de 24h + message tags |
 | Telegram | Bot puede enviar cuando quiera al usuario que inició |
 | Email | Sin ventana |
-| SMS | Pricing por mensaje, no por conversación |
+| SMS | Pricing por mensaje (segmento) del proveedor |
 
 WhatsApp es el más restrictivo. El workflow debe respetar sus reglas (ver [`06-politicas-y-calidad/`](../../06-politicas-y-calidad/)).
 
@@ -92,7 +92,7 @@ Respond.io cobra MAU por contacto único en el mes, independiente del canal. Per
 
 | Canal | Costo externo |
 |---|---|
-| WhatsApp | Conversaciones de Meta |
+| WhatsApp | Mensajes de plantilla de Meta |
 | SMS | Twilio (u otro proveedor) |
 | Email | Provider (a veces incluido) |
 | IG/Messenger | Sin costo de Meta para los mensajes |

@@ -44,7 +44,7 @@ Gupshup compite con Twilio como BSP global, con mayor presencia en mercados emer
 | Auth | Bearer token de Meta | API key de Gupshup |
 | Plantillas | Meta directo | Vía Gupshup o Meta (sincronizan) |
 | Bot builder | DIY | Incluido |
-| Pricing | Por conversación de Meta | Suscripción + por conversación |
+| Pricing | Por mensaje de plantilla (Meta) | Suscripción + por mensaje |
 
 ## Setup básico
 

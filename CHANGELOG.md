@@ -4,6 +4,12 @@ Todos los cambios relevantes a esta wiki se documentan acá. Formato basado en [
 
 ## [Unreleased]
 
+### Changed
+- `06-politicas-y-calidad/pricing.md` reescrito para el **pricing por mensaje (PMP)** vigente desde el 1 jul 2025: cobro por plantilla entregada, free-form y Utility gratis dentro de la ventana de 24h, tiers de volumen, Authentication-International, nuevo objeto `pricing` del webhook (`pricing_model: PMP`, `type`) e historia del modelo.
+- Referencias al modelo por conversación (CBP) actualizadas en `categorias.md`, `webhooks.md`, `free-entry-points.md`, `ventana-24h.md`, `openai/costos.md`, recetas, BSPs/CRMs, Respond.io y `glossary.json`.
+- `llms.txt`: agregados todos los documentos que faltaban en el índice (fundamentos, onboarding, mensajería, plantillas, políticas, subdocs de `07-integraciones/`, despliegue y troubleshooting).
+- Quitadas las marcas "(pendiente)" de links a documentos que ya existen.
+
 ### Added
 - BSPs: `03-formas-de-uso/bsps/twilio.md`, `gupshup.md`.
 - CRMs: `03-formas-de-uso/crms/hubspot.md`, `salesforce.md`, `zoho.md`.

@@ -146,7 +146,7 @@ Detalle de cada paso en [`01-onboarding-meta/`](../../01-onboarding-meta/) y [`0
 | Redis | Plugin base | ~3 |
 | **Total** | | **~25-30 USD/mes** |
 
-Más OpenAI según uso y conversaciones de Meta. Ver [`07-integraciones/openai/costos.md`](../../07-integraciones/openai/costos.md) y [`06-politicas-y-calidad/pricing.md`](../../06-politicas-y-calidad/pricing.md).
+Más OpenAI según uso y mensajes de plantilla de Meta. Ver [`07-integraciones/openai/costos.md`](../../07-integraciones/openai/costos.md) y [`06-politicas-y-calidad/pricing.md`](../../06-politicas-y-calidad/pricing.md).
 
 ## Hardening
 

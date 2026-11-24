@@ -14,11 +14,11 @@ audience: [integrador, marketing, comercial]
 
 # Free Entry Points y CTWA
 
-> **TL;DR:** Si un usuario inicia conversación cliqueando un anuncio Click-to-WhatsApp (CTWA) o el botón "Enviar mensaje" de una Facebook Page, se abre una **Free Entry Point Conversation**: una ventana de **72 horas** en la que el negocio puede enviar **mensajes free-form sin costo de plantilla**. Es la herramienta más subutilizada para bajar costos.
+> **TL;DR:** Si un usuario inicia conversación cliqueando un anuncio Click-to-WhatsApp (CTWA) o el botón "Enviar mensaje" de una Facebook Page, y el negocio responde dentro de las 24h, se abre una **ventana Free Entry Point** de **72 horas** en la que **todos los mensajes son gratis**, incluidas las plantillas. Es la herramienta más subutilizada para bajar costos.
 
 ## Contexto
 
-Meta incentiva que el usuario inicie la conversación. Cuando lo hace vía un anuncio o una superficie de Meta (no por número directo), el costo de la conversación se transforma de "Marketing tarifa-alta" en "Free Entry Point", y la ventana de respuesta se extiende a 72 horas.
+Meta incentiva que el usuario inicie la conversación. Cuando lo hace vía un anuncio o una superficie de Meta (no por número directo), y el negocio responde dentro de las 24h, durante las 72h siguientes no se cobra ningún mensaje (ni free-form ni plantillas).
 
 Esto cambia drásticamente la economía de:
 
@@ -32,7 +32,7 @@ Esto cambia drásticamente la economía de:
 |---|---|---|
 | Click-to-WhatsApp Ad (Facebook, Instagram) | Sí | El principal generador |
 | Botón "Enviar mensaje" de Facebook Page | Sí | A veces llamado "Page CTA" |
-| QR code en local físico | No (es Service normal) | Pero abre conversación con costo $0 igual |
+| QR code en local físico | No (es Service normal) | Abre ventana de servicio de 24h: free-form gratis |
 | Link `wa.me/{{NUMERO}}` desde otro sitio | No (Service normal) | |
 | Plantilla Marketing del negocio | No (Marketing) | |
 | Llamada perdida del usuario al número de WA | Service normal | |
@@ -43,7 +43,8 @@ Esto cambia drásticamente la economía de:
 |---|---|---|
 | Origen | Anuncio o Page CTA de Meta | Cualquier mensaje del usuario |
 | Ventana | **72 horas** | 24 horas |
-| Tarifa | **Sin costo de plantilla**, sin costo de conversación dentro de las 72h | $0 hasta cupo, luego tarifa Service |
+| Condición | El negocio responde dentro de las 24h del primer mensaje | — |
+| Tarifa | **Todos los mensajes gratis**, incluidas plantillas Marketing/Utility/Authentication | Free-form y Utility gratis; Marketing y Authentication se cobran |
 | Reportes | Trackeable como conversion en Ads Manager | No es atribuible a campaña paga |
 
 ## Cómo se identifica en webhook
@@ -89,7 +90,7 @@ flowchart LR
   WA -->|webhook con referral| N8N[n8n]
   N8N --> SAVE[Guardar ctwa_clid + ad_id]
   N8N --> WELCOME[Mensaje de bienvenida<br/>contextualizado al anuncio]
-  WELCOME --> CONVO[Conversación con IA<br/>72h sin costo de plantilla]
+  WELCOME --> CONVO[Conversación con IA<br/>72h, todo gratis]
   CONVO --> CONV[Conversion logueada]
 ```
 
@@ -126,11 +127,11 @@ Sin esto, las ads CTWA no aparecen como opción al armar la campaña.
 
 | Caso | Apertura | Costo aprox |
 |---|---|---|
-| 1.000 conversaciones vía Marketing template | Negocio | 1.000 × $0.07 = **$70** |
-| 1.000 conversaciones vía CTWA | Usuario (CTWA) | **$0** (más costo de ad spend que es otra cosa) |
-| 1.000 conversaciones reactivas Service | Usuario (otro canal) | $0 hasta cupo, luego $0.01-0.02 |
+| 1.000 contactos con 1 plantilla Marketing cada uno | Negocio | 1.000 × $0.07 = **$70** |
+| 1.000 contactos vía CTWA (con seguimiento por plantilla dentro de 72h) | Usuario (CTWA) | **$0** (más costo de ad spend que es otra cosa) |
+| 1.000 contactos reactivos (usuario escribe por otro canal) | Usuario | $0 en free-form; plantillas Marketing se cobran |
 
-CTWA tiene costo de ad spend (CPM, CPC) que sí pagás a Meta como anunciante, pero el **conversation cost** queda en $0 dentro de las 72h. La economía depende del CPM vs el valor del lead.
+CTWA tiene costo de ad spend (CPM, CPC) que sí pagás a Meta como anunciante, pero los mensajes de WhatsApp quedan en $0 dentro de las 72h. La economía depende del CPM vs el valor del lead.
 
 ## Errores comunes
 
@@ -138,7 +139,8 @@ CTWA tiene costo de ad spend (CPM, CPC) que sí pagás a Meta como anunciante, p
 |---|---|---|
 | `referral` no aparece en webhook | Suscripción de webhooks sin `messages` o el field no estaba habilitado | Verificar suscripción y volver a crear el ad |
 | Tracking de conversion no llega a Ads Manager | Pixel o Conversion API no configurada | Implementar Conversion API con el `ctwa_clid` |
-| Conversación se cobra como Marketing aunque vino de ad | El número no estaba bien vinculado a la Page | Revisar vinculación Page → WhatsApp |
+| Mensajes cobrados aunque vino de ad | No se respondió dentro de las 24h, o el número no estaba bien vinculado a la Page | Responder rápido (idealmente automático) y revisar vinculación Page → WhatsApp |
+| `pricing.type` no es `free_entry_point` | Ventana FEP no abierta | Revisar las dos causas anteriores |
 | Ventana de 72h "expira" antes | Confusión con ventana de 24h | Confirmar que sea Free Entry Point real, no Service post-ad |
 | Bot responde "como si fuera un usuario nuevo" | No mira `referral` | Agregar lógica de contextualización |
 

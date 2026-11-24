@@ -30,7 +30,7 @@ Casi cualquier operación que crece necesita más de un número: para no mezclar
 | Messaging tier | Número | No — independiente |
 | Webhooks | App / WABA | Sí — un endpoint para todos |
 | Business verification | Portfolio | Sí |
-| Pricing | Por conversación / país | Aplica por número según destino |
+| Pricing | Por mensaje de plantilla / país | Aplica por número según destino |
 
 Implicancia clave: **una plantilla aprobada en la WABA la pueden usar todos los números**. No hay que aprobar la misma plantilla N veces.
 

@@ -91,7 +91,7 @@ curl -X POST "https://{{EVO_HOST}}/instance/create" \
 | Listar contactos | `GET /chat/findContacts/{instance}` | |
 | Logout | `DELETE /instance/logout/{instance}` | Cierra sesión sin borrar instancia. |
 
-Detalle completo y payloads en [`07-integraciones/evolution-api/endpoints.md`](../07-integraciones/evolution-api/endpoints.md) (pendiente).
+Detalle completo y payloads en [`07-integraciones/evolution-api/endpoints.md`](../07-integraciones/evolution-api/endpoints.md).
 
 ## Eventos por webhook
 
@@ -115,7 +115,7 @@ Los más relevantes para una integración con n8n + IA:
 | Tiers | Sí (250 → ilimitado) | No, sin límite explícito |
 | Riesgo de ban | Nulo | Alto |
 | Webhooks | Configurados en Meta | Configurados en Evolution |
-| Pricing | Free + por conversación | Solo hosting |
+| Pricing | Por mensaje de plantilla (free-form en ventana gratis) | Solo hosting |
 | Multi-número | Sí | Sí (instancias) |
 | Soporte oficial | Meta | Comunidad |
 

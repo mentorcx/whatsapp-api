@@ -80,22 +80,29 @@ flowchart TD
 
 ## Pricing: cómo funciona
 
-Meta cobra por **conversación**, no por mensaje. Una conversación es una ventana de 24 horas con un mismo usuario, abierta por una plantilla (business-initiated) o por el usuario (reactiva).
+Desde el 1 de julio de 2025 Meta cobra **por mensaje de plantilla entregado** (per-message pricing), no por conversación de 24h.
 
-| Tipo de conversación | Categoría que la abrió | Cómo se cobra |
-|---|---|---|
-| Marketing | Plantilla Marketing | Tarifa Marketing del país |
-| Utility | Plantilla Utility | Tarifa Utility del país (puede ser 0 en ciertas combinaciones) |
-| Authentication | Plantilla Authentication | Tarifa Authentication del país |
-| Service | Usuario inició o Free Entry Point | Tarifa Service del país (a menudo $0 hasta cierto cupo) |
+| Mensaje | Cómo se cobra |
+|---|---|
+| Plantilla Marketing | Tarifa Marketing del país, cada envío entregado |
+| Plantilla Utility | Tarifa Utility del país; **$0 si se envía dentro de la ventana de servicio de 24h** |
+| Plantilla Authentication | Tarifa Authentication del país (algunos países tienen tarifa internacional) |
+| Free-form (service) dentro de la ventana de 24h | **$0** |
+| Cualquier mensaje en ventana Free Entry Point (72h) | **$0** |
+
+Utility y Authentication tienen descuentos por volumen mensual.
 
 **Importante:** las tarifas exactas varían por país y se actualizan. Consultar siempre en la página oficial: [Pricing](https://developers.facebook.com/docs/whatsapp/pricing). Ver también [`06-politicas-y-calidad/pricing.md`](../06-politicas-y-calidad/pricing.md).
 
-## Free tier mensual
+## Qué es gratis
 
-Meta ofrece un cupo gratuito de conversaciones de **service** (reactivas o por Free Entry Point) por número y por mes. Esto NO incluye Marketing / Utility / Authentication business-initiated.
+Ya no existe el "cupo de 1.000 conversaciones gratis" del modelo viejo. Hoy es gratis:
 
-**Verificado: 2026-05-20** — el cupo y su existencia pueden cambiar. Consultar pricing oficial.
+- Todo mensaje free-form dentro de la ventana de servicio de 24h.
+- Las plantillas Utility enviadas dentro de esa ventana.
+- Todos los mensajes dentro de una ventana Free Entry Point (CTWA o botón de Page).
+
+Marketing y Authentication se cobran siempre fuera de Free Entry Point.
 
 ## Re-categorización por Meta
 
@@ -103,7 +110,7 @@ Meta puede **cambiar la categoría** de una plantilla automáticamente si detect
 
 - Llega el webhook `template_category_update`.
 - La plantilla sigue activa pero ahora bajo la nueva categoría.
-- Las próximas conversaciones se cobran con la nueva tarifa.
+- Los próximos envíos se cobran con la nueva tarifa.
 
 Ejemplos de re-categorización forzada:
 
@@ -116,8 +123,9 @@ Ejemplos de re-categorización forzada:
 
 | Patrón | Cómo |
 |---|---|
-| Maximizar conversaciones service | Inviar al usuario a iniciar (CTWA, QR code, link `wa.me`) |
-| Consolidar mensajes | Enviar plantilla 1 vez, conversar durante 24h free-form |
+| Maximizar ventanas de servicio | Invitar al usuario a iniciar (CTWA, QR code, link `wa.me`) |
+| Consolidar mensajes | Una plantilla con toda la info en vez de varias: cada una se cobra |
+| Utility dentro de la ventana | Si el usuario escribió hace < 24h, la Utility sale a $0 |
 | Elegir Utility sobre Marketing cuando aplique | Confirmaciones reales son Utility, no "promo encubierta" |
 | Evitar plantillas marketing innecesarias | Usar Free Entry Point para campañas |
 | Multi-número por uso | Número distinto para marketing y para soporte (segmentación de calidad y costos) |

@@ -14,11 +14,11 @@ audience: [integrador, comercial, dev]
 
 # Costos de OpenAI en bots de WhatsApp
 
-> **TL;DR:** OpenAI cobra por tokens (entrada + salida). Para un bot de WhatsApp con `gpt-4o-mini`, una conversación típica de ~10 turnos cuesta del orden de **$0.002-0.01**. El costo de OpenAI suele ser **menor** que el de las conversaciones de WhatsApp (Meta). Optimizaciones clave: modelo adecuado, ventana de contexto acotada, prompt caching.
+> **TL;DR:** OpenAI cobra por tokens (entrada + salida). Para un bot de WhatsApp con `gpt-4o-mini`, una conversación típica de ~10 turnos cuesta del orden de **$0.002-0.01**. El costo de OpenAI suele ser **menor** que el de las plantillas de WhatsApp (Meta); en un bot 100% reactivo (sin plantillas) Meta cobra $0 y OpenAI pasa a ser el costo variable principal. Optimizaciones clave: modelo adecuado, ventana de contexto acotada, prompt caching.
 
 ## Contexto
 
-Una pregunta recurrente del cliente: "¿cuánto sale el bot?". Hay que separar tres costos: **OpenAI** (este documento), **conversaciones de WhatsApp** (Meta, ver [`06-politicas-y-calidad/pricing.md`](../../06-politicas-y-calidad/pricing.md)) y **hosting**. Este documento estima el primero.
+Una pregunta recurrente del cliente: "¿cuánto sale el bot?". Hay que separar tres costos: **OpenAI** (este documento), **mensajes de plantilla de WhatsApp** (Meta, ver [`06-politicas-y-calidad/pricing.md`](../../06-politicas-y-calidad/pricing.md)) y **hosting**. Este documento estima el primero.
 
 ## Cómo cobra OpenAI
 
@@ -70,11 +70,11 @@ Para 1.000 conversaciones/mes:
 | Costo | Estimación mensual |
 |---|---|
 | OpenAI (`gpt-4o-mini`, ~10 turnos/conv) | ~$3-8 |
-| Conversaciones WhatsApp (mix service/utility/marketing) | ~$50-200 (depende del país y categorías) |
+| Plantillas WhatsApp (utility/marketing; free-form en ventana = $0) | ~$0-200 (depende del país y de cuántas plantillas se envían) |
 | Hosting (n8n + DB) | ~$15-30 |
-| **Total** | **~$70-240** |
+| **Total** | **~$20-240** |
 
-Conclusión: **OpenAI no es el costo dominante**. El gasto fuerte está en las conversaciones de Meta. Optimizar agresivamente OpenAI a costa de calidad rara vez vale la pena.
+Conclusión: si el negocio envía plantillas (recordatorios, campañas), **el gasto fuerte está en Meta** y optimizar agresivamente OpenAI a costa de calidad rara vez vale la pena. Si el bot es puramente reactivo, Meta no cobra nada (free-form dentro de la ventana de 24h es gratis) y el costo variable es OpenAI + hosting.
 
 ## Elegir el modelo según costo/calidad
 

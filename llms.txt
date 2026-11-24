@@ -9,6 +9,7 @@ Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento u
 - [Qué es WhatsApp Business Platform](00-fundamentos/que-es-wa-business-platform.md): WABA, Cloud API, on-premise (deprecada), BSPs.
 - [Arquitectura y roles](00-fundamentos/arquitectura.md): Portfolio, WABA, Phone Number, App, System User.
 - [Cloud API vs alternativas](00-fundamentos/cloud-api-vs-alternativas.md): comparación de alto nivel.
+- [Roles en el ecosistema](00-fundamentos/roles.md): los 6 roles, propiedad de activos, anti-patrón de lock-in.
 
 ## Onboarding Meta
 
@@ -16,6 +17,7 @@ Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento u
 - [Verificación comercial](01-onboarding-meta/verificacion-comercial.md): documentos, tiempos, errores frecuentes.
 - [Embedded Signup vs flujo manual](01-onboarding-meta/embedded-signup.md)
 - [System Users y tokens](01-onboarding-meta/system-users-tokens.md): permanentes vs temporales, scopes.
+- [2FA del número y de la cuenta Meta](01-onboarding-meta/2fa.md): PIN del número, 2FA de cuentas.
 
 ## Números y conexión
 
@@ -24,6 +26,7 @@ Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento u
 - [Display name](02-numeros-y-conexion/display-name.md): políticas, rechazo, apelación.
 - [Configurar webhooks](02-numeros-y-conexion/webhooks.md)
 - [Tiers de mensajería](02-numeros-y-conexion/tiers-mensajeria.md): 250, 1K, 10K, 100K, unlimited.
+- [Multi-número en una WABA](02-numeros-y-conexion/multi-numero.md): qué se comparte, routing, patrones.
 
 ## Formas de uso
 
@@ -34,7 +37,9 @@ Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento u
 - [Kommo CRM](03-formas-de-uso/kommo-crm.md): WA Lite vs Cloud API vs proveedor.
 - [BSP: Twilio](03-formas-de-uso/bsps/twilio.md)
 - [BSP: Gupshup](03-formas-de-uso/bsps/gupshup.md)
-- [CRMs: HubSpot, Salesforce, Zoho](03-formas-de-uso/crms/)
+- [CRM: HubSpot](03-formas-de-uso/crms/hubspot.md)
+- [CRM: Salesforce](03-formas-de-uso/crms/salesforce.md)
+- [CRM: Zoho](03-formas-de-uso/crms/zoho.md)
 
 ## Mensajería
 
@@ -42,30 +47,75 @@ Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento u
 - [Mensajes interactivos](04-mensajeria/interactivos.md): buttons, lists, CTA URL.
 - [Flows](04-mensajeria/flows.md): formularios in-chat.
 - [Límites de media](04-mensajeria/limites-media.md)
+- [Marcar como leído y typing indicator](04-mensajeria/marcar-leido-typing.md)
+- [Reply y React](04-mensajeria/reply-react.md): citar y reaccionar a mensajes.
 
 ## Plantillas (HSM)
 
-- [Categorías y pricing](05-plantillas-hsm/categorias.md): Marketing, Utility, Authentication.
+- [Categorías y pricing](05-plantillas-hsm/categorias.md): Marketing, Utility, Authentication; cobro por mensaje.
 - [Estructura y variables](05-plantillas-hsm/estructura.md)
 - [Buenas prácticas para aprobación](05-plantillas-hsm/aprobacion.md)
 - [Causas de rechazo frecuentes](05-plantillas-hsm/rechazos.md)
 - [Pausing por bajo engagement](05-plantillas-hsm/pausing.md)
+- [Plantillas multi-idioma](05-plantillas-hsm/idiomas.md)
+- [Versionado y edición de plantillas](05-plantillas-hsm/versionado.md)
 
 ## Políticas y calidad
 
 - [Ventana de 24h](06-politicas-y-calidad/ventana-24h.md)
-- [Free entry points](06-politicas-y-calidad/free-entry-points.md): CTWA, Click-to-WhatsApp.
+- [Free entry points](06-politicas-y-calidad/free-entry-points.md): CTWA y Page CTA, ventana de 72h con todos los mensajes gratis.
 - [Quality rating](06-politicas-y-calidad/quality-rating.md): green/yellow/red.
-- [Conversation-based pricing](06-politicas-y-calidad/pricing.md)
+- [Pricing por mensaje (PMP)](06-politicas-y-calidad/pricing.md): desde jul 2025 se cobra cada plantilla entregada; free-form y Utility en ventana de 24h gratis.
 - [Opt-in obligatorio](06-politicas-y-calidad/opt-in.md)
+- [Industrias restringidas y contenidos prohibidos](06-politicas-y-calidad/prohibiciones.md)
 
 ## Integraciones
 
-- [n8n: nodo oficial + patrones](07-integraciones/n8n/)
-- [OpenAI: function calling, contexto, costos](07-integraciones/openai/)
-- [Evolution API: endpoints y eventos](07-integraciones/evolution-api/)
-- [Respond.io: workflows y webhooks](07-integraciones/respond-io/)
-- [Kommo: Salesbot, API, webhooks](07-integraciones/kommo/)
+### n8n
+
+- [n8n: setup](07-integraciones/n8n/setup.md): queue mode, worker, Postgres, Redis.
+- [Recibir mensajes de WhatsApp en n8n](07-integraciones/n8n/webhook-entrante.md): verify, HMAC, dedup, parseo.
+- [Nodo WhatsApp Business Cloud](07-integraciones/n8n/nodo-whatsapp-cloud.md)
+- [Patrones de orquestación](07-integraciones/n8n/patrones.md): router, dedup, sesión, rate limiting, handoff.
+- [Contexto de conversación en n8n](07-integraciones/n8n/contexto.md): Postgres vs Redis, schema.
+- [Subflows reutilizables](07-integraciones/n8n/subflows.md)
+- [Errores comunes](07-integraciones/n8n/errores-comunes.md)
+
+### OpenAI
+
+- [Patrones de prompts](07-integraciones/openai/prompts.md): system prompt, formato WhatsApp, anti-alucinación.
+- [Contexto de conversación](07-integraciones/openai/contexto-conversacion.md): ventana deslizante, summarization.
+- [Function calling](07-integraciones/openai/function-calling.md): tools, schema, strict mode.
+- [Streaming](07-integraciones/openai/streaming.md)
+- [Moderación](07-integraciones/openai/moderacion.md)
+- [Costos](07-integraciones/openai/costos.md): tokens vs plantillas de Meta.
+
+### Evolution API
+
+- [Instancias](07-integraciones/evolution-api/instancias.md)
+- [Endpoints](07-integraciones/evolution-api/endpoints.md)
+- [Eventos webhook](07-integraciones/evolution-api/eventos.md)
+- [Integraciones (n8n, Chatwoot, Typebot)](07-integraciones/evolution-api/integraciones.md)
+
+### Respond.io
+
+- [Setup](07-integraciones/respond-io/setup.md)
+- [Channels](07-integraciones/respond-io/channels.md)
+- [Workflows](07-integraciones/respond-io/workflows.md)
+- [Webhooks](07-integraciones/respond-io/webhooks.md)
+- [API REST](07-integraciones/respond-io/api-rest.md)
+- [Respond.io vs n8n](07-integraciones/respond-io/vs-n8n.md)
+
+### Kommo
+
+- [Conceptos](07-integraciones/kommo/conceptos.md)
+- [Conexión con WhatsApp](07-integraciones/kommo/conexion-whatsapp.md)
+- [Salesbot](07-integraciones/kommo/salesbot.md)
+- [API REST](07-integraciones/kommo/api-rest.md)
+- [Webhooks](07-integraciones/kommo/webhooks.md)
+- [Integración con n8n](07-integraciones/kommo/integracion-n8n.md)
+- [Integración con OpenAI](07-integraciones/kommo/integracion-openai.md)
+- [Limitaciones conocidas](07-integraciones/kommo/limitaciones.md)
 
 ## Despliegue
 
@@ -73,6 +123,7 @@ Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento u
 - [Plantilla: Evolution API + Postgres + Redis](08-despliegue/railway/plantilla-evolution-api.md)
 - [Plantilla: n8n + Postgres + Redis](08-despliegue/railway/plantilla-n8n.md)
 - [Plantilla: Stack completo Evolution + n8n + OpenAI](08-despliegue/railway/plantilla-evolution-n8n-openai.md)
+- [Plantilla: Cloud API oficial + n8n + OpenAI](08-despliegue/railway/plantilla-cloudapi-n8n-openai.md): stack productivo con API oficial.
 - [docker-compose equivalentes](08-despliegue/docker-compose/)
 - [Alternativas](08-despliegue/alternativas.md): Fly.io, Render, Hetzner.
 
@@ -93,6 +144,7 @@ Esta wiki está optimizada para consumo por humanos y por LLMs. Cada documento u
 - [Plantillas pausadas](10-troubleshooting/plantillas-pausadas.md)
 - [Tokens y permisos](10-troubleshooting/tokens.md)
 - [Rate limits](10-troubleshooting/rate-limits.md)
+- [Evolution API pierde la sesión](10-troubleshooting/evolution-desconexion.md)
 
 ## Meta
 

@@ -130,7 +130,7 @@ Si necesitás más capacidad de la que un solo número da:
 | Concepto | Lo que mide | Cambio |
 |---|---|---|
 | Tier | Cuántas conversaciones nuevas/día | Limita volumen |
-| Pricing | Costo por conversación | No limita, solo cobra |
+| Pricing | Costo por mensaje de plantilla | No limita, solo cobra |
 
 Podés estar en `TIER_UNLIMITED` y aun así pagar por cada conversación Marketing. Ver [`06-politicas-y-calidad/pricing.md`](../06-politicas-y-calidad/pricing.md).
 
